@@ -47,21 +47,17 @@ class Search extends Component {
   }
 
   componentDidUpdate(){
-
     if(this.state.users.length >= 1 && this.state.haveUsersRendered === false){
       const theUserCards = [];
       for (let i = 0; i < this.state.users.length; i += 1) {
         theUserCards.push(<UserCards key={i} userObj={this.state.users[i]} />)
     }
-    console.log('*****8', theUserCards)
     this.setState({theUserCards: theUserCards, haveUsersRendered: true});
  }
 
 }
 
   render(){
-   
-    console.log('checking state in render', (this.state));
     return(
       <div>
         <input onChange={(e) => this.handleChange(e)} placeholder={'Username'}></input> 
@@ -71,8 +67,5 @@ class Search extends Component {
     )
   }
 }
-
-
-
 
 export default Search;
